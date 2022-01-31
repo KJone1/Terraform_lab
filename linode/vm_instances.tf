@@ -11,4 +11,5 @@ resource "linode_instance" "tftest" {
     tags            = [ "tag_test1","tag_test2" ]
     swap_size       = 512
     private_ip      = true
+    #  TODO: set up alerts configuration  
 }
