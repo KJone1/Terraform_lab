@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    linode  = {
+    linode = {
       source  = "linode/linode"
       version = "1.25.1"
     }
@@ -9,5 +9,5 @@ terraform {
 
 # Configure the Linode Provider
 provider "linode" {
-  token     = "${var.LINODE_TOKEN}"
+  token = var.LINODE_TOKEN
 }
