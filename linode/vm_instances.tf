@@ -1,5 +1,5 @@
 resource "linode_instance" "tftest" {
-  count           = 2
+  count           = var.deployment_count
   label           = "tf_test.${count.index + 1}"
   image           = "linode/rocky8"
   region          = var.region
