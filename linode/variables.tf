@@ -11,3 +11,9 @@ variable "region" {
   sensitive   = false
   default     = "ap-west"
 }
+variable "deployment_count" {
+  description = "number of instances and block storage volumes to deploy"
+  type        = number
+  nullable    = false
+  sensitive   = false
+}
