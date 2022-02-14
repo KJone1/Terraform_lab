@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket = "tfstate"
-    key    = "network/terraform.tfstate"
+    key    = "network/terraform.tfstate"           # file path inside bucket
     region = "eu-central-1"                        # e.g. us-east-1
     endpoint = "eu-central-1.linodeobjects.com"    # e.g. us-est-1.linodeobjects.com
     access_key = "BVH1JK7NQXK1TS55F53C"            # demo keys
