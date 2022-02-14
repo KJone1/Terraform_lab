@@ -10,8 +10,12 @@ terraform {
     key    = "network/terraform.tfstate"
     region = "eu-central-1"                        # e.g. us-east-1
     endpoint = "eu-central-1.linodeobjects.com"    # e.g. us-est-1.linodeobjects.com
-    access_key = "BVH1JK7NQXK1TS55F53C"
+    access_key = "BVH1JK7NQXK1TS55F53C"            # demo keys
     secret_key = "QRu5NKBrBcJofPDFh9lH1KPIhzUhJzL5Qo6XvDRA"
+    # Use AWS_ACCESS_KEY_ID environment variable for access key.
+    # Use AWS_SECRET_ACCESS_KEY environment variable for secret key.
+    # Or Use AWS shared credentials file (e.g. ~/.aws/credentials),
+    # AWS shared configuration file (e.g. ~/.aws/config).
     skip_credentials_validation = true
     # According to Terraform's documentation: (Optional) Skip the credentials validation 
     # via the STS API. Presumably this is referring to Amazon STS, but I'll be honest; 
