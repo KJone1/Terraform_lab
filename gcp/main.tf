@@ -11,7 +11,7 @@ terraform {
 provider "google" {
   credentials = "service_account_keys.json"
   project     = "onyx-philosophy-333713"  # project id 
-  region      = "us-central1"
-  zone        = "us-central1-c"
+  region      = "europe-central2"         # Warsaw, Poland
+  zone        = "europe-central2-c"       # default zone
 }
 
