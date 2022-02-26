@@ -1,8 +1,10 @@
 resource "linode_instance" "tftest" {
   count           = var.deployment_count
   label           = "tf_test.${count.index + 1}"
-  # image         = "private/15463845"      # use custom image made with packer stored in linode
-  image           = "linode/rocky8"         # use "clean image" from linode
+  # use latest custom image made with packer stored in linode
+  image           = data.linode_images.latest_image.images[0].id
+  # use "clean image" from linode
+  # image           = "linode/rocky8"                             
   region          = var.region
   type            = "g6-standard-2"
   # public key for ssh # 
