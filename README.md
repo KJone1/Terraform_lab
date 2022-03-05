@@ -16,5 +16,9 @@ Terraform scripts for my home lab
   - Create a Project
   - Generate Service Account keys
 
+## - **todo**
+
+- [ ] add backend for gcp 
+
 ---
  \- maintained by: KJone
