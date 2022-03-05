@@ -1,6 +1,7 @@
 
 resource "google_compute_instance" "default" {
-  name           = "tftest"
+  count          = var.deployment_count
+  name           = "tf_test.${count.index + 1}"
   description    = "vm instance deployment test"
   machine_type   = "e2-micro"
   zone           = "europe-central2-c"
