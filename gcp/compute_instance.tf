@@ -13,7 +13,7 @@ resource "google_compute_instance" "default" {
     "app-name"    = "playground"
     "region"      = "europe-central"
     }
-  tags           = ["foo", "bar"]
+  tags           = ["http","https"]
   boot_disk {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
     device_name = "playground"
@@ -25,7 +25,7 @@ resource "google_compute_instance" "default" {
     }
   }
     network_interface {
-    network = "default"
+    network = google_compute_network.vpc_network.name
     access_config {
       network_tier = "PREMIUM" 
     } 
