@@ -7,13 +7,17 @@ resource "google_compute_instance" "default" {
   zone           = "${var.region["poland"]}-c"
   desired_status = "RUNNING"
   labels         = {
-    "version"     = 1.1,
+    "version"     = "1_1",
     "environment" = "prod",
     "role"        = "web-server"
     "app-name"    = "playground"
     "region"      = "europe-central"
-    }
-  tags           = ["http","https"]
+  }
+  tags           = [
+    "http",
+    "https",
+    "ssh",
+  ]
   boot_disk {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
     device_name = "playground"
@@ -24,7 +28,7 @@ resource "google_compute_instance" "default" {
       type  = "pd-balanced"
     }
   }
-    network_interface {
+  network_interface {
     network = google_compute_network.vpc_network.name
     access_config {
       network_tier = "PREMIUM" 
