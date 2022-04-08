@@ -12,6 +12,9 @@ resource "google_compute_firewall" "http-rule" {
     protocol  = "tcp"
     ports     = ["80"]
   }
+  log_config {
+    metadata = "INCLUDE_ALL_METADATA"
+  }
 }
 resource "google_compute_firewall" "https-rule" {
   name          = "vpc-allow-https"
@@ -23,6 +26,9 @@ resource "google_compute_firewall" "https-rule" {
     protocol  = "tcp"
     ports     = ["443"]
   }
+  log_config {
+    metadata = "INCLUDE_ALL_METADATA"
+  }
 }
 resource "google_compute_firewall" "ssh-rule" {
   name          = "vpc-allow-ssh"
@@ -33,6 +39,9 @@ resource "google_compute_firewall" "ssh-rule" {
   allow {
     protocol  = "tcp"
     ports     = ["22"]
+  }
+  log_config {
+    metadata = "INCLUDE_ALL_METADATA"
   }
 }
 resource "google_compute_firewall" "ping-rule" {
