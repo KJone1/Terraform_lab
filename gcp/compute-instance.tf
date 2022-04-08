@@ -17,7 +17,7 @@ resource "google_compute_instance" "default" {
     "http",
     "https",
     "ssh",
-    "icmp",
+    "ping",
   ]
   boot_disk {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
     }
   }
   attached_disk {
-    source        = google_compute_disk.app-data-storage
+    source        = google_compute_disk.app-data-storage.self_link
     device_name   = "playground-ext"
   }
   network_interface {
