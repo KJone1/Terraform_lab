@@ -1,6 +1,6 @@
 # Homelab Terraform
 
-Terraform scripts for my home lab
+Terraform IAC for my home-lab
 
 ## - **Prerequisites**
 
@@ -18,7 +18,9 @@ Terraform scripts for my home lab
 
 ## - **todo**
 
-- [ ] add backend for gcp 
+- [ ] add backend for gcp (bucket integration)
+- [ ] split readme file to 2 readmes one for gcp one for linode
+- [ ] add gcp block storage integration
 
 ---
  \- maintained by: KJone
