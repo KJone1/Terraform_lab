@@ -29,6 +29,10 @@ resource "google_compute_instance" "default" {
       type  = "pd-balanced"
     }
   }
+  attached_disk {
+    source        = google_compute_disk.app-data-storage
+    device_name   = "playground-ext"
+  }
   network_interface {
     network = google_compute_network.vpc_network.name
     access_config {
