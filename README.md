@@ -20,7 +20,7 @@ Terraform IAC for my home-lab
 
 - [ ] add backend for gcp (bucket integration)
 - [ ] split readme file to 2 readmes one for gcp one for linode
-- [ ] add gcp block storage integration
+- [X] add gcp block storage integration
 
 ---
  \- maintained by: KJone
