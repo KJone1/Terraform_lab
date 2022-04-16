@@ -2,7 +2,6 @@
 
  deploy Google Compute Engine instance in GCP, with an attached disk, firewall rules and network configuration
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name             	| Description                   	| Type        	| Default                                                                                                                                                                                                         	| Required 	|
@@ -15,9 +14,7 @@
 
 | Name              	| Description                                                                  	|
 |-------------------	|------------------------------------------------------------------------------	|
-| instance_metadata 	| Metadata of deployed gcp compute instance => name,deployed image,zone,status 	|
-
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+| instance_metadata 	| Metadata of deployed gcp compute instance => name, deployed image, zone, status 	|
 
 ## Running
 
