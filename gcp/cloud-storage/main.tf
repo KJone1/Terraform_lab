@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = "service_account_keys.json"
+  credentials = "../service_account_keys.json"
   project     = var.project["test-project"]  # project id 
   region      = var.region["poland"]         # Warsaw, Poland, eu-central2
   zone        = "${var.region["poland"]}-c"  # default zone
