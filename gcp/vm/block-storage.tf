@@ -7,7 +7,7 @@ resource "google_compute_disk" "app-data-storage" {
   size                      = 100  # in GB
   physical_block_size_bytes = 4096
   type                      = "pd-ssd"
-  zone                      = "${var.region["poland"]}-c"
+  zone                      = "${var.region}-${var.zone}"
   labels                    = {
     "environment" = "prod",
     "role"        = "web-server-storage"
