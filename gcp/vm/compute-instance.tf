@@ -4,7 +4,7 @@ resource "google_compute_instance" "default" {
   name           = "tf-test-${count.index + 1}"
   description    = "vm instance deployment test"
   machine_type   = "e2-micro"
-  zone           = "${var.region["poland"]}-c"
+  zone           = "${var.region["poland"]}-${var.zone}"
   desired_status = "RUNNING"
   labels         = {
     "version"     = "1_1",

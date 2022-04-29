@@ -4,12 +4,12 @@
 
 ## Inputs
 
-| Name             	| Description                   	| Type        	| Default                                                                                                                                                                                                         	| Required 	|
-|------------------	|-------------------------------	|-------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|----------	|
-| deployment_count 	| number of instances to deploy 	| number      	| 1                                                                                                                                                                                                               	| yes      	|
-| region           	| region to deploy to           	| map(string) 	| {<br>poland     = "europe-central2",<br>finland     = "europe-north1",<br>belgium     = "europe-west1",<br>england     = "europe-west2",<br>germany     = "europe-west3",<br>switzerland = "europe-west6",<br>} 	| yes      	|
-| project          	| project id                    	| map(string) 	| test-project = "onyx-philosophy-333713"                                                                                                                                                                         	| yes      	|                   | yes      |
-
+| Name             	| Description                   	| Type   	| Default                  	| Required 	|
+|------------------	|-------------------------------	|--------	|--------------------------	|----------	|
+| deployment_count 	| number of instances to deploy 	| number 	| 1                        	| yes      	|
+| region           	| region to deploy to           	| string 	| "europe-central2"        	| yes      	|
+| zone             	| zone in region                	| string 	| "c"                      	| yes      	|
+| project          	| project id                    	| string 	| "onyx-philosophy-333713" 	| yes      	|
 ## Outputs
 
 | Name              	| Description                                                                  	|

@@ -1,12 +1,10 @@
 
 variable "project" {
   description = "project id"
-  type        = map
+  type        = string
   nullable    = false
   sensitive   = false
-  default     = {
-    test-project = "onyx-philosophy-333713"
-  }
+  default     = "onyx-philosophy-333713"
 }
 variable "deployment_count" {
   description = "number of instances to deploy"
@@ -17,16 +15,15 @@ variable "deployment_count" {
 }
 variable "region" {
   description = "region to deploy"
-  type        = map
+  type        = string
   nullable    = false
   sensitive   = false
-  default     = {
-    poland      = "europe-central2"
-    finland     = "europe-north1"
-    belgium     = "europe-west1"
-    england     = "europe-west2"
-    germany     = "europe-west3"
-    switzerland = "europe-west6"
-       
-  } 
+  default     = "europe-central2" 
+} 
+variable "zone" {
+  description = "zone to deploy -> 'a','b','c'"
+  type        = string
+  nullable    = false
+  sensitive   = false
+  default     = "c" 
 }
