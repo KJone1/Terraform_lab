@@ -19,6 +19,9 @@ resource "google_compute_instance" "default" {
     "ssh",
     "ping",
   ]
+  metadata       = {
+    enable-oslogin = "TRUE"
+  }
   boot_disk {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
     device_name = "playground"
