@@ -7,7 +7,6 @@ resource "google_compute_instance" "default" {
   zone           = "${var.region}-${var.zone}"
   desired_status = "RUNNING"
   labels         = {
-    "version"     = "1_1",
     "environment" = "prod",
     "role"        = "web-server"
     "app-name"    = "playground"
