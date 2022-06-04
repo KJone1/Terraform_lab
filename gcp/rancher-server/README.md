@@ -4,9 +4,11 @@
 
 ## Inputs
 
-| Name 	| Description      	| Type   	| Default        	| Required 	|
-|------	|------------------	|--------	|----------------	|----------	|
-| name 	| VPC network name 	| string 	| my-vpc-network 	| yes      	|
+| Name    	| Description         	| Type   	| Default                  	| Required 	|
+|---------	|---------------------	|--------	|--------------------------	|----------	|
+| region  	| region to deploy to 	| string 	| "europe-central2"        	| yes      	|
+| zone    	| zone in region      	| string 	| "c"                      	| yes      	|
+| project 	| project id          	| string 	| "onyx-philosophy-333713" 	| yes      	|
 
 ## Outputs
 
