@@ -1,4 +1,9 @@
 
+module "network" {
+  source       = "../modules/network"
+  network_name = "my-main-vpc-network" 
+}
+
 resource "google_compute_instance" "default" {
   count          = var.deployment_count
   name           = "tf-test-${count.index + 1}"
@@ -36,7 +41,7 @@ resource "google_compute_instance" "default" {
     device_name   = "playground-ext"
   }
   network_interface {
-    network = google_compute_network.vpc_network.name
+    network = module.network.name
     access_config {
       network_tier = "PREMIUM" 
     } 

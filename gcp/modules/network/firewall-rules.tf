@@ -30,6 +30,20 @@ resource "google_compute_firewall" "https-rule" {
     metadata = "INCLUDE_ALL_METADATA"
   }
 }
+resource "google_compute_firewall" "app-rule" {
+  name          = "vpc-allow-test-app-port"
+  network       = google_compute_network.vpc_network.name
+  description   = "Firewall rule targeting tagged https web servers"
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["app"]
+  allow {
+    protocol  = "tcp"
+    ports     = ["32580"]
+  }
+  log_config {
+    metadata = "INCLUDE_ALL_METADATA"
+  }
+}
 resource "google_compute_firewall" "ssh-rule" {
   name          = "vpc-allow-ssh"
   network       = google_compute_network.vpc_network.name
