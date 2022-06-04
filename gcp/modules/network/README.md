@@ -1,6 +1,6 @@
 # Network Configuration
 
- Module to deploy VPC network and firewall rules in GCP
+ Module to deploy VPC network and firewall rules in GCP.
 
 ## Inputs
 

@@ -1,6 +1,12 @@
 # Rancher configuration
 
- deploy Rancher v2.5.13 server in GCP, with firewall rules and network configuration
+ deploy Rancher v2.5.13 server in GCP, with firewall rules and network configuration.
+
+## - **Prerequisites**
+
+- Create a Project.
+- Generate Service Account keys for terraform.
+- Update 'project' variable in `variables.tf` to match your project id.
 
 ## Inputs
 

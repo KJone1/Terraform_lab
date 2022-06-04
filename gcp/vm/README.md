@@ -1,6 +1,12 @@
 # GCP configuration
 
- deploy Google Compute Engine instance in GCP, with an attached disk, firewall rules and network configuration
+ deploy Google Compute Engine instance in GCP, with an attached disk, firewall rules and network configuration.
+
+## - **Prerequisites**
+
+- Create a Project.
+- Generate Service Account keys for terraform.
+- Update 'project' variable in `variables.tf` to match your project id.
 
 ## Inputs
 
