@@ -2,7 +2,7 @@
 
  deploy Google Compute Engine instance in GCP, with an attached disk, firewall rules and network configuration.
 
-## - **Prerequisites**
+## Prerequisites
 
 - Create a Project.
 - Generate Service Account keys for terraform.
