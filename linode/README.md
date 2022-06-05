@@ -12,9 +12,9 @@
 
 | Name             	| Description                   	| Type   	| Default   	| Required 	|
 |------------------	|-------------------------------	|--------	|-----------	|----------	|
-| deployment_count 	| number of instances to deploy 	| number 	|           	| yes      	|
+| deployment_count 	| number of instances to deploy 	| number 	| n/a       	| yes      	|
 | region           	| region to deploy to           	| string 	| "ap-west" 	| yes      	|
-| LINODE_TOKEN     	| Linode accese token           	| string 	|           	| yes      	|
+| LINODE_TOKEN     	| Linode accese token           	| string 	| n/a       	| yes      	|
 
 ## Outputs
 
