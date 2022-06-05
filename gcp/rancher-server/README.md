@@ -1,6 +1,6 @@
 # Rancher configuration
 
- deploy Rancher v2.5.13 server in GCP, with firewall rules and network configuration.
+ Deploy Rancher v2.5.13 server in GCP, with firewall rules and network configuration.
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 # GCP configuration
 
- deploy Google Compute Engine instance in GCP, with an attached disk, firewall rules and network configuration.
+ Deploy Google Compute Engine instance in GCP, with an attached disk, firewall rules and network configuration.
 
 ## Prerequisites
 
