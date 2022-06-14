@@ -38,7 +38,10 @@ resource "google_compute_firewall" "app-rule" {
   target_tags   = ["app"]
   allow {
     protocol  = "tcp"
-    ports     = ["32580"]
+    ports     = [
+      "32580",
+      "32582"
+    ]
   }
   log_config {
     metadata = "INCLUDE_ALL_METADATA"
