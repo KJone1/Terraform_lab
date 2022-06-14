@@ -4,7 +4,7 @@
 resource "google_container_node_pool" "primary_node_pool" {
   name       = "louis-mckay"
   location   = "${var.region}-${var.zone}"
-  cluster    = google_container_cluster.primary.name
+  cluster    = google_container_cluster.khan.name
   node_count = 3
        
   node_config {
