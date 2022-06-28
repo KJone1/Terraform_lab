@@ -2,25 +2,19 @@
 
 Terraform IAC for my home-lab
 
-## - **Prerequisites**
+## - **Compatibility**
 
-- Linode provider
-  - Generate linode access token and export as env var `TF_VAR_LINODE_TOKEN`
-  - Use `AWS_ACCESS_KEY_ID` environment variable for s3 backend access key.
-  - Use `AWS_SECRET_ACCESS_KEY` environment variable for s3 backend secret key.
-  - optional for backend keys :
-    - AWS shared credentials file (e.g. ~/.aws/credentials)
-    - AWS shared configuration file (e.g. ~/.aws/config)
+Terraform version used : Terraform v1.1.4  
+GCP Provider version used : hashicorp/google version 4.11.0  
+Linode Provider version used : linode/linode version 1.25.2
 
-- GCP provider
-  - Create a Project
-  - Generate Service Account keys
+## - **Road Map**
 
-## - **todo**
-
-- [ ] add backend for gcp (bucket integration)
-- [ ] split readme file to 2 readmes one for gcp one for linode
-- [X] add gcp block storage integration
+- [X] make basic rancher server setup
+- [X] make gke basic gke cluster setup
+- [ ] add backend for gcp provider + state locking
+- [ ] add readme for gcp cloud storage
+- [ ] add subnetworks to 'network' module
 
 ---
- \- maintained by: KJone
+ \- maintained by: KJone1
