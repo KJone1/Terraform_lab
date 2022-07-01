@@ -6,6 +6,7 @@ resource "google_container_node_pool" "primary_node_pool" {
   location   = "${var.region}-${var.zone}"
   cluster    = google_container_cluster.khan.name
   node_count = 3
+  version    = data.google_container_engine_versions.gke-ver.default_cluster_version
        
   node_config {
     preemptible  = true
