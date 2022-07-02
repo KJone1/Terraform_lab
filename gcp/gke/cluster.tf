@@ -7,10 +7,13 @@ module "network" {
 }
 
 resource "google_container_cluster" "khan" {
-  name     = "roosevelt-khan"
-  location = "${var.region}-${var.zone}"
+  name            = "roosevelt-khan"
+  location        = "${var.region}-${var.zone}"
   # ↑ If you specify a zone the cluster will be a zonal cluster, 
   # If you specify a only the region the cluster will be a regional cluster.
+  resource_labels = {
+    "environment" = "prod"
+  }
   network  = module.network.name
   remove_default_node_pool = true
   initial_node_count       = 1
