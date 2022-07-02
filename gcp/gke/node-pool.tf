@@ -14,16 +14,14 @@ resource "google_container_node_pool" "primary_node_pool" {
     disk_size_gb = 20
     disk_type    = "pd-standard"
     labels       = {
-    "environment" = "prod"
-    "role"        = "cluster-node"
-    "region"      = var.region
+    "role"       = "cluster-node"
+    "cluster"    = google_container_cluster.khan.name
     } 
-    tags          = [
+    tags         = [
       "http",
       "https",
       "ssh",
       "ping",
-      "app",
     ]  
     service_account = data.google_service_account.Test_Proj_TfTest.email
     oauth_scopes    = [
