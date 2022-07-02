@@ -30,18 +30,14 @@ resource "google_compute_firewall" "https-rule" {
     metadata = "INCLUDE_ALL_METADATA"
   }
 }
-resource "google_compute_firewall" "app-rule" {
-  name          = "vpc-allow-test-app-port"
+resource "google_compute_firewall" "health-check-rule" {
+  name          = "vpc-allow-health-check"
   network       = google_compute_network.vpc_network.name
-  description   = "Firewall rule targeting tagged https web servers"
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["app"]
+  description   = "Firewall rule allowing health checks from gcp L7 LB"
+  source_ranges = ["35.191.0.0/16","130.211.0.0/22"]
   allow {
     protocol  = "tcp"
-    ports     = [
-      "32580",
-      "32582"
-    ]
+    ports     = ["30000-32767"]
   }
   log_config {
     metadata = "INCLUDE_ALL_METADATA"
