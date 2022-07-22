@@ -15,6 +15,7 @@ Linode Provider version used : linode/linode version 1.25.2
 - [ ] add backend for gcp provider + state locking
 - [ ] add readme for gcp cloud storage
 - [ ] add subnetworks to 'network' module
+- [ ] Add AWS configuration
 
 ---
  \- maintained by: KJone1
