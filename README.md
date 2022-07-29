@@ -10,12 +10,7 @@ Linode Provider version used : linode/linode version 1.25.2
 
 ## - **Road Map**
 
-- [X] make basic rancher server setup
-- [X] make gke basic gke cluster setup
-- [ ] add backend for gcp provider + state locking
-- [ ] add readme for gcp cloud storage
-- [ ] add subnetworks to 'network' module
-- [ ] Add AWS configuration
+check out pinned **Roadmap** issue  
 
 ---
  \- maintained by: KJone1
