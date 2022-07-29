@@ -1,4 +1,4 @@
-# Homelab Terraform
+# Terraform Lab
 
 Terraform IAC for my home-lab
 
