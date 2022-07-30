@@ -6,7 +6,7 @@ Terraform IAC for my home-lab
 
 Terraform version used : Terraform v1.1.4  
 GCP Provider version used : hashicorp/google version 4.11.0  
-Linode Provider version used : linode/linode version 1.25.2
+Linode Provider version used : linode/linode version 1.25.2  
 AWS Provider version used : hashicorp/aws version 4.24.0
 
 ## - **Road Map**
