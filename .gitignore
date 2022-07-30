@@ -37,3 +37,4 @@ terraform.rc
 # ignore key files 
 *keys*
 *key*
+**/.vscode
