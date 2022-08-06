@@ -20,4 +20,9 @@ provider "aws" {
   region     = var.region # defaults to us-east-1
   access_key = local.access_key
   secret_key = local.secret_key
+  default_tags {
+    tags = {
+      region = var.region
+    }
+  }
 }
