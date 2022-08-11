@@ -12,10 +12,10 @@ resource "google_compute_instance" "default" {
   zone           = "${var.region}-${var.zone}"
   desired_status = "RUNNING"
   labels         = {
-    "environment" = "prod",
-    "role"        = "web-server"
-    "app-name"    = "playground"
-    "region"      = "europe-central"
+    "environment" = "dev",
+    "role"        = "dev-server"
+    "app"         = "playground"
+    "region"      = var.region
   }
   tags           = [
     "http",
