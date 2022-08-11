@@ -4,7 +4,7 @@
 resource "google_compute_disk" "app-data-storage" {
   name                      = "test-block"
   description               = "storage extantion for vm"
-  size                      = 100  # in GB
+  size                      = 20  # in GB
   physical_block_size_bytes = 4096
   type                      = "pd-ssd"
   zone                      = "${var.region}-${var.zone}"
