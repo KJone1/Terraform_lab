@@ -3,13 +3,17 @@ variable "deployment_count" {
   description = "number of instances to deploy"
   type        = number
   nullable    = false
-  sensitive   = false
   default     = 1
 }
 variable "region" {
-  description = "region to deploy"
+  description = "Region to deploy to"
   type        = string
   nullable    = false
-  sensitive   = false
   default     = "us-east-1" 
+} 
+variable "az" {
+  description = "Availability zones to deploy to"
+  type        = string
+  nullable    = false
+  default     = "d" 
 } 

@@ -5,7 +5,7 @@
 
 resource "aws_ebs_volume" "default" {
   count             = var.deployment_count
-  availability_zone = "${var.region}d"
+  availability_zone = "${var.region}${var.az}"
   size              = 30
   tags              = {
     Name        = "ebs-${aws_instance.default[count.index].tags.Name}",
