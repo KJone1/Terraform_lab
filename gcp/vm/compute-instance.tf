@@ -11,6 +11,7 @@ locals {
     "region"      = var.region
   }
 }
+
 module "network" {
   source       = "../modules/network"
   network_name = "my-main-vpc-network" 
@@ -26,6 +27,7 @@ resource "google_compute_disk" "app-data-storage" {
   zone                      = "${var.region}-${var.zone}"
   labels                    = local.labels
 }
+
 resource "google_compute_instance" "default" {
   count          = var.deployment_count
   name           = "${local.base_name}-${count.index + 1}"

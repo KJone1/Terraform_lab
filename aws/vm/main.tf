@@ -9,6 +9,7 @@ terraform {
     }
   }
 }
+
 locals {
   terraform_cred_file = file("../terraform_credential_keys.csv")
   terraform_cred      = csvdecode(local.terraform_cred_file)
