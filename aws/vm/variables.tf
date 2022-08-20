@@ -17,3 +17,9 @@ variable "az" {
   nullable    = false
   default     = "d" 
 } 
+variable "pub_key_name" {
+  description = "aws key pair name"
+  type        = string
+  nullable    = false
+  default     = "key-082022"
+}
