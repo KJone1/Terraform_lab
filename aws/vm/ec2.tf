@@ -28,13 +28,14 @@ resource "aws_volume_attachment" "ebs_att" {
 }
 
 resource "aws_instance" "default" {
-  count         = var.deployment_count
-  ami           = data.aws_ami.rocky8-us-east1.id
-  instance_type = "t3.small"
-  key_name      = "key-082022"
-  subnet_id     = module.network.subnet_id
+  count                       = var.deployment_count
+  ami                         = data.aws_ami.rhel-us-east1.id
+  instance_type               = "t3.small"
+  key_name                    = var.pub_key_name
+  subnet_id                   = module.network.subnet_id
+  associate_public_ip_address = true
   vpc_security_group_ids = [
-    module.network.sg_firewall_id
+    module.network.sg_firewall.id
   ]
   tags          = {
     Name        = "srv-${count.index + 1}",
