@@ -11,10 +11,9 @@ terraform {
 }
 
 locals {
-  terraform_cred_file = file("../terraform_credential_keys.csv")
-  terraform_cred      = csvdecode(local.terraform_cred_file)
-  access_key          = local.terraform_cred[0]["Access key ID"]
-  secret_key          = local.terraform_cred[0]["Secret access key"]
+  terraform_cred = csvdecode(file("../terraform_credential_keys.csv"))
+  access_key     = local.terraform_cred[0]["Access key ID"]
+  secret_key     = local.terraform_cred[0]["Secret access key"]
 }
 
 provider "aws" {
