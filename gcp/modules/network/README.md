@@ -8,7 +8,7 @@
 |--------------	|------------------	|--------	|----------------	|----------	|
 | network_name 	| VPC network name 	| string 	| my-vpc-network 	| no      	|
 | subnet_name 	| VPC subnetwork name 	| string 	| my-vpc-subnet 	| no      	|
-| cidr_range 	| VPC IP CIDR range 	| string 	| 10.2.2.2/26 	| no      	|
+| cidr_range 	| VPC IP CIDR range 	| string 	| 10.2.2.0/26 	| no      	|
 
 ## Outputs
 
