@@ -59,7 +59,8 @@ resource "google_compute_instance" "default" {
     device_name   = "playground-ext"
   }
   network_interface {
-    network = module.network.name
+    network    = module.network.network_name
+    subnetwork = module.network.subnet_name
     access_config {
       network_tier = "PREMIUM" 
     } 

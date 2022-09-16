@@ -14,7 +14,8 @@ resource "google_container_cluster" "khan" {
   resource_labels = {
     "environment" = "prod"
   }
-  network  = module.network.name
+  network    = module.network.network_name
+  subnetwork = module.network.subnet_name
   remove_default_node_pool = true
   initial_node_count       = 1
 }
