@@ -6,13 +6,16 @@
 
 | Name         	| Description      	| Type   	| Default        	| Required 	|
 |--------------	|------------------	|--------	|----------------	|----------	|
-| network_name 	| VPC network name 	| string 	| my-vpc-network 	| yes      	|
+| network_name 	| VPC network name 	| string 	| my-vpc-network 	| no      	|
+| subnet_name 	| VPC subnetwork name 	| string 	| my-vpc-subnet 	| no      	|
+| cidr_range 	| VPC IP CIDR range 	| string 	| 10.2.2.2/26 	| no      	|
 
 ## Outputs
 
 | Name         	| Description      	
 |--------------	|------------------
-| name 	        | VPC network name 	
+| network_name 	        | VPC network name 	
+| subnet_name 	        | VPC subnetwork name 	
 
 ## Running
 
