@@ -11,7 +11,7 @@ AWS Provider version used : hashicorp/aws version 4.24.0
 
 ## - **Road Map**
 
-check out pinned **Roadmap** issue  
+check out pinned [**Roadmap**](https://github.com/KJone1/Terraform_lab/issues/1) issue  
 
 ---
  \- maintained by: KJone1
