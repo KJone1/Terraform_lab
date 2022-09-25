@@ -10,7 +10,7 @@ resource "google_container_node_pool" "primary_node_pool" {
        
   node_config {
     preemptible  = true
-    machine_type = "e2-small"
+    machine_type = "e2-medium"
     disk_size_gb = 20
     disk_type    = "pd-standard"
     labels       = {
