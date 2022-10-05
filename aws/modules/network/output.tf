@@ -4,7 +4,7 @@ output "name" {
   value       = aws_vpc.vpc_network.tags.Name
 }
 output "subnet_id" {
-  description = "VPC network name"
+  description = "VPC subnet id"
   value       = aws_subnet.first.id
 }
 output "sg_firewall" {
