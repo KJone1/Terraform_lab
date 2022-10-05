@@ -28,7 +28,7 @@ resource "aws_internet_gateway" "gw" {
     Name = "internet_gw"
   }
 }
-resource "aws_route_table" "toydeploy-rt" {
+resource "aws_route_table" "rt" {
   vpc_id = aws_vpc.vpc_network.id
   route {
     cidr_block = "0.0.0.0/0"
@@ -36,7 +36,7 @@ resource "aws_route_table" "toydeploy-rt" {
   }
 }
 
-resource "aws_route_table_association" "toydeploy-rta" {
+resource "aws_route_table_association" "rta" {
   subnet_id      = aws_subnet.first.id
-  route_table_id = aws_route_table.toydeploy-rt.id
+  route_table_id = aws_route_table.rt.id
 }
