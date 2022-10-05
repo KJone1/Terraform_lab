@@ -8,6 +8,6 @@ output "subnet_id" {
   value       = aws_subnet.first.id
 }
 output "sg_firewall" {
-  description = "vpc security group 'firewall'"
+  description = "VPC security group 'firewall'"
   value       = aws_security_group.firewall
 }

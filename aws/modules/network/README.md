@@ -14,7 +14,7 @@
 |--------------	|------------------
 | name 	        | VPC network name 	
 | subnet_id	        | VPC subnet id 	
-| sg_firewall        | vpc security group 	
+| sg_firewall        | VPC security group 	
 
 ## Running
 
