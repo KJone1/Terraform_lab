@@ -17,7 +17,7 @@ module "network" {
   network_name = "my-main-vpc-network" 
 }
 
-resource "google_compute_disk" "app-data-storage" {
+resource "google_compute_disk" "data-storage" {
   count                     = var.deployment_count
   name                      = "${local.base_name}-${count.index + 1}-disk"
   description               = "storage extantion for vm"
@@ -55,7 +55,7 @@ resource "google_compute_instance" "default" {
     }
   }
   attached_disk {
-    source        = google_compute_disk.app-data-storage[count.index].self_link
+    source        = google_compute_disk.data-storage[count.index].self_link
     device_name   = "playground-ext"
   }
   network_interface {
