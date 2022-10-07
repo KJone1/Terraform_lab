@@ -27,7 +27,7 @@ resource "google_compute_instance" "WireGuard_server" {
   metadata       = {
     enable-oslogin = "TRUE"
   }
-  metadata_startup_script = "sudo dnf -y install elrepo-release epel-release && sudo dnf -y install kmod-wireguard wireguard-tools && echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf"
+  metadata_startup_script = "sudo dnf -y upgrade && sudo dnf -y install elrepo-release epel-release && sudo dnf -y install kmod-wireguard wireguard-tools && echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf"
   boot_disk {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
     device_name = "rbs"
