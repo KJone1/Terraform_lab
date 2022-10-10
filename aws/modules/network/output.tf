@@ -1,7 +1,7 @@
 
-output "name" {
-  description = "VPC network name"
-  value       = aws_vpc.vpc_network.tags.Name
+output "vpc_id" {
+  description = "VPC network id"
+  value       = aws_vpc.vpc_network.id
 }
 output "subnet_id" {
   description = "VPC subnet id"
