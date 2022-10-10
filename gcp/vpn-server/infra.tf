@@ -7,11 +7,6 @@ locals {
   }
 }
 
-module "network" {
-  source       = "../modules/network"
-  network_name = "my-main-vpc-network" 
-}
-
 resource "google_compute_instance" "WireGuard_server" {
   name           = "wireguard"
   description    = "WireGuard server deployment"
