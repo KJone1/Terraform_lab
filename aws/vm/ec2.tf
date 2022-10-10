@@ -3,12 +3,6 @@
 # ebs            -> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ebs_volume
 # ebs attachment -> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/volume_attachment 
 
-module "network" {
-  source            = "../modules/network"
-  network_name      = "my-main-vpc-network"
-  availability_zone = "${var.region}${var.az}" 
-}
-
 resource "aws_ebs_volume" "default" {
   count             = var.deployment_count
   availability_zone = "${var.region}${var.az}"
@@ -36,7 +30,7 @@ resource "aws_instance" "default" {
   associate_public_ip_address = true
   depends_on                  = [module.network.internet_gw]
   vpc_security_group_ids = [
-    module.network.sg_wg_vpn.id
+    aws_security_group.wg_vpn.id
   ]
   tags          = {
     Name        = "srv-${count.index + 1}",
