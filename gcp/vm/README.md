@@ -12,10 +12,11 @@
 
 | Name             	| Description                   	| Type   	| Default                  	| Required 	|
 |------------------	|-------------------------------	|--------	|--------------------------	|----------	|
-| deployment_count 	| number of instances to deploy 	| number 	| 1                        	| yes      	|
-| region           	| region to deploy to           	| string 	| "europe-central2"        	| yes      	|
-| zone             	| zone in region                	| string 	| "c"                      	| yes      	|
-| project          	| project id                    	| string 	| "onyx-philosophy-333713" 	| yes      	|
+| deployment_count 	| number of instances to deploy 	| number 	| 1                        	| no      	 |
+| region           	| region to deploy to           	| string 	| "europe-central2"        	| no      	 |
+| zone             	| zone in region                	| string 	| "c"                      	| no      	 |
+| project          	| project id                    	| string 	| "onyx-philosophy-333713" 	| no      	 |
+
 ## Outputs
 
 | Name              	| Description                                                                  	|
