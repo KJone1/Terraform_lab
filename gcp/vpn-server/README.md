@@ -12,9 +12,9 @@ Deploy WireGuard VPN server in GCP, with firewall rules and network configuratio
 
 | Name    	| Description         	| Type   	| Default                  	| Required 	|
 |---------	|---------------------	|--------	|--------------------------	|----------	|
-| region  	| region to deploy to 	| string 	| "europe-central2"        	| yes      	|
-| zone    	| zone in region      	| string 	| "c"                      	| yes      	|
-| project 	| project id          	| string 	| "onyx-philosophy-333713" 	| yes      	|
+| region  	| region to deploy to 	| string 	| "europe-central2"        	| no      	|
+| zone    	| zone in region      	| string 	| "c"                      	| no      	|
+| project 	| project id          	| string 	| "onyx-philosophy-333713" 	| no      	|
 
 ## Outputs
 
