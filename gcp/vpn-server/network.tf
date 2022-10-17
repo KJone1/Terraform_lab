@@ -6,7 +6,7 @@ module "network" {
 
 resource "google_compute_firewall" "wg-vpn-rule" {
   name          = "vpc-allow-wg-vpn"
-  network       = google_compute_network.vpc_network.name
+  network       = module.network.network_name
   description   = "Firewall rule for WireGuard VPN"
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["vpn"]
