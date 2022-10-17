@@ -63,12 +63,7 @@ variable "tags" {
   type        = list
   nullable    = false
   sensitive   = false
-  default     = [
-    "http",
-    "https",
-    "ssh",
-    "ping",
-  ]
+  default     = ["http","https","ssh","ping"]
 }
 variable "startup_script" {
   description = "instance startup script"
