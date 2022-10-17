@@ -14,6 +14,7 @@
 | machine_type     	| instance type                                  	| string 	| "e2-standard-4"                                                          	| no       	|
 | labels           	| instance labels                                	| map    	| {"environment" = "dev"<br> "role" = "dev-server"<br> "app" = "playground"} 	| no       	|
 | tags             	| instance tags                                  	| list   	| ["http",<br> "https",<br> "ssh",<br> "ping"]                             	| no       	|
+ |startup_script             	| startup script 	| string 	| n/a                                                                     	| no  
 ## Outputs
 
 | Name              	| Description                                                                  	|

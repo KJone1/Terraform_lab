@@ -70,3 +70,10 @@ variable "tags" {
     "ping",
   ]
 }
+variable "startup_script" {
+  description = "instance startup script"
+  type        = string
+  nullable    = false
+  sensitive   = false
+  default     = ""
+}
