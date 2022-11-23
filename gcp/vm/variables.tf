@@ -4,7 +4,6 @@ variable "project" {
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "onyx-philosophy-333713"
 }
 variable "deployment_count" {
   description = "number of instances to deploy"

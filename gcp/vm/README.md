@@ -6,16 +6,16 @@
 
 - Create a Project.
 - Generate Service Account keys for terraform.
-- Update 'project' variable in `variables.tf` to match your project id.
+- Update 'project' variable in `.tfvars` to match your project id.
 
 ## Inputs
 
 | Name             	| Description                   	| Type   	| Default                  	| Required 	|
 |------------------	|-------------------------------	|--------	|--------------------------	|----------	|
 | deployment_count 	| number of instances to deploy 	| number 	| 1                        	| no      	 |
-| region           	| region to deploy to           	| string 	| "europe-central2"        	| no      	 |
+| region           	| region to deploy to           	| string 	| "us-west1"        	| no      	 |
 | zone             	| zone in region                	| string 	| "c"                      	| no      	 |
-| project          	| project id                    	| string 	| "onyx-philosophy-333713" 	| no      	 |
+| project          	| project id                    	| string 	|  	| yes      	 |
 
 ## Outputs
 
