@@ -5,6 +5,6 @@ output "instance_metadata" {
     for instance in google_compute_instance.default:
         instance.name => {deployed_image    = instance.boot_disk[0].initialize_params[0].image,
                           deployed_zone     = instance.zone,
-                          status            = instance.current_status}
+                          type              = instance.machine_type}
   }
 }

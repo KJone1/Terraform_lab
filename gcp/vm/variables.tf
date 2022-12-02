@@ -12,6 +12,13 @@ variable "deployment_count" {
   sensitive   = false
   default     = 1
 }
+variable "machine_type" {
+  description = "machine type"
+  type        = string
+  nullable    = false
+  sensitive   = false
+  default     = "e2-standard-4"
+}
 variable "region" {
   description = "region to deploy"
   type        = string

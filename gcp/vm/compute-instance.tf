@@ -32,7 +32,7 @@ resource "google_compute_instance" "default" {
   count          = var.deployment_count
   name           = "${local.base_name}-${count.index + 1}"
   description    = "vm instance deployment test"
-  machine_type   = "e2-standard-4"
+  machine_type   = var.machine_type
   zone           = "${var.region}-${var.zone}"
   desired_status = "RUNNING"
   labels         = local.labels
