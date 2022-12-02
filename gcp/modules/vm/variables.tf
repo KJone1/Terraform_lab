@@ -72,3 +72,17 @@ variable "startup_script" {
   sensitive   = false
   default     = ""
 }
+variable "attached_disk" {
+  description = "attached disk self link"
+  type        = string
+  nullable    = false
+  sensitive   = false
+  default     = ""
+}
+variable "attached_disk_name" {
+  description = "attached disk name"
+  type        = string
+  nullable    = false
+  sensitive   = false
+  default     = ""
+}

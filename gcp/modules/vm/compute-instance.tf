@@ -23,6 +23,10 @@ resource "google_compute_instance" "default" {
       type  = "pd-balanced"
     }
   }
+  attached_disk {
+    source        = var.attached_disk
+    device_name   = var.attached_disk_name
+  }
   network_interface {
     network    = var.network_name
     subnetwork = var.subnet_name
