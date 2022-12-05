@@ -5,6 +5,12 @@ variable "project" {
   nullable    = false
   sensitive   = false
 }
+variable "name" {
+  description = "instance name"
+  type        = string
+  nullable    = false
+  sensitive   = false
+}
 variable "deployment_count" {
   description = "number of instances to deploy"
   type        = number

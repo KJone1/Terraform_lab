@@ -16,6 +16,7 @@
 | region           	| region to deploy to           	| string 	| "us-west1"        	| no      	 |
 | zone             	| zone in region                	| string 	| "c"                      	| no      	 |
 | project          	| project id                    	| string 	|  	| yes      	 |
+| name          	| instance name                     	| string 	|  	| yes      	 |
 
 ## Outputs
 
