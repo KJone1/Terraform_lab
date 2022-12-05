@@ -3,7 +3,7 @@
 
 resource "google_compute_instance" "default" {
   count          = var.deployment_count
-  name           = "${var.name}-${count.index + 1}"
+  name           = "${var.name}"
   description    = "vm instance deployment"
   machine_type   = var.machine_type
   zone           = "${var.region}-${var.zone}"
@@ -24,7 +24,7 @@ resource "google_compute_instance" "default" {
     }
   }
   attached_disk {
-    source        = var.attached_disk
+    source        = var.attached_disk_source
     device_name   = var.attached_disk_name
   }
   network_interface {

@@ -72,7 +72,7 @@ variable "startup_script" {
   sensitive   = false
   default     = ""
 }
-variable "attached_disk" {
+variable "attached_disk_source" {
   description = "attached disk self link"
   type        = string
   nullable    = false
