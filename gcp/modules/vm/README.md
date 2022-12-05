@@ -15,6 +15,8 @@
 | labels           	| instance labels                                	| map    	| {"environment" = "dev"<br> "role" = "dev-server"<br> "app" = "playground"} 	| no       	|
 | tags             	| instance tags                                  	| list   	| ["http",<br> "https",<br> "ssh",<br> "ping"]                             	| no       	|
  |startup_script             	| startup script 	| string 	| n/a                                                                     	| no  
+ |attached_disk_source             	| attached disk source 	| string 	| n/a                                                                     	| no  
+ |attached_disk_name             	| attached disk name 	| string 	| n/a                                                                     	| no  
 ## Outputs
 
 | Name              	| Description                                                                  	|
