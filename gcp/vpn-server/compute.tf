@@ -2,8 +2,8 @@
 module "vm" {
   source         = "../modules/vm"
   name           = "wireguard"
-  network_name   = "module.network.network_name" 
-  subnet_name    = "module.network.subnet_name"
+  network_name   = module.network.network_name
+  subnet_name    = module.network.subnet_name
   machine_type   = "e2-medium"
   labels = {
     "environment" = "prod",
