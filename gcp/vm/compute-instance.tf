@@ -1,9 +1,5 @@
 
-# compute => https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance
-# disk    => https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_disk
-
 locals {
-  base_name   = "khan"
   labels = {
     "environment" = "dev",
     "role"        = "dev-server"
@@ -17,52 +13,24 @@ module "network" {
   network_name = "my-main-vpc-network" 
 }
 
-resource "google_compute_disk" "data-storage" {
-  count                     = var.deployment_count
-  name                      = "${local.base_name}-${count.index + 1}-disk"
-  description               = "storage extantion for vm"
-  size                      = 20  # in GB
-  physical_block_size_bytes = 4096
-  type                      = "pd-ssd"
-  zone                      = "${var.region}-${var.zone}"
-  labels                    = local.labels
-}
-
-resource "google_compute_instance" "default" {
+module "disk" {
+  source         = "../modules/storage"
   count          = var.deployment_count
-  name           = "${local.base_name}-${count.index + 1}"
-  description    = "vm instance deployment test"
-  machine_type   = var.machine_type
+  name           = "${var.name}-${count.index + 1}-disk"
   zone           = "${var.region}-${var.zone}"
-  desired_status = "RUNNING"
+  sizeGB         = 20
+}
+module "vm" {
+  source         = "../modules/vm"
+  count          = var.deployment_count
+  name           = "${var.name}-${count.index + 1}"
+  machine_type   = var.machine_type
+  region         = var.region
+  zone           = var.zone
+  network_name   = module.network.network_name
+  subnet_name    = module.network.subnet_name
   labels         = local.labels
-  tags           = [
-    "http",
-    "https",
-    "ssh",
-    "ping",
-  ]
-  metadata       = {
-    enable-oslogin = "TRUE"
-  }
-  boot_disk {
-    # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
-    device_name = "playground"
-    initialize_params { 
-      image = data.google_compute_image.rocky8-latest.id
-      size  = 20            # in GB
-      type  = "pd-balanced"
-    }
-  }
-  attached_disk {
-    source        = google_compute_disk.data-storage[count.index].self_link
-    device_name   = "playground-ext"
-  }
-  network_interface {
-    network    = module.network.network_name
-    subnetwork = module.network.subnet_name
-    access_config {
-      network_tier = "PREMIUM" 
-    } 
-  }
+  tags           = ["http","https","ssh","ping"]
+  attached_disk_source = module.disk[count.index].metadata.output.self_link
+  attached_disk_name = "extnd"
 }
