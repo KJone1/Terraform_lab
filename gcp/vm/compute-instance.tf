@@ -16,7 +16,7 @@ module "network" {
 module "disk" {
   source         = "../modules/storage"
   count          = var.deployment_count
-  name           = "${var.name}-${count.index + 1}-disk"
+  name           = "${var.name}-${count.index + 1}-ext"
   zone           = "${var.region}-${var.zone}"
   sizeGB         = 20
 }
@@ -31,6 +31,6 @@ module "vm" {
   subnet_name    = module.network.subnet_name
   labels         = local.labels
   tags           = ["http","https","ssh","ping"]
-  attached_disk_source = module.disk[count.index].metadata.output.self_link
+  attached_disk_source = module.disk[count.index].self_link
   attached_disk_name = "extnd"
 }

@@ -5,5 +5,5 @@ resource "google_compute_instance_group" "servers" {
   name        = "terraform-servers"
   description = "Terraform instance group"
   zone        = "${var.region}-${var.zone}"
-  instances   = module.vm[*].metadata.output.id
+  instances   = module.vm[*].id
 }
