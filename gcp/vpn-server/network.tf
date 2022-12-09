@@ -1,7 +1,7 @@
 
 module "network" {
   source       = "../modules/network"
-  network_name = "my-main-vpc-network" 
+  network_name = "wireguard-network" 
 }
 
 resource "google_compute_firewall" "wg-vpn-rule" {
