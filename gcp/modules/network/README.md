@@ -4,18 +4,18 @@
 
 ## Inputs
 
-| Name         	| Description      	| Type   	| Default        	| Required 	|
-|--------------	|------------------	|--------	|----------------	|----------	|
-| network_name 	| VPC network name 	| string 	| my-vpc-network 	| no      	|
-| subnet_name 	| VPC subnetwork name 	| string 	| my-vpc-subnet 	| no      	|
-| cidr_range 	| VPC IP CIDR range 	| string 	| 10.2.2.0/26 	| no      	|
+| Name          | Description       | Type    | Default         | Required  |
+|-------------- |------------------ |-------- |---------------- |---------- |
+| network_name  | VPC network name  | string  | my-vpc-network  | no  |
+| subnet_name   | VPC subnetwork name | string | my-vpc-subnet | no |
+| cidr_range    | VPC IP CIDR range | string  | 10.2.2.0/26 | no  |
 
 ## Outputs
 
-| Name         	| Description      	
-|--------------	|------------------
-| network_name 	        | VPC network name 	
-| subnet_name 	        | VPC subnetwork name 	
+| Name          | Description
+|-------------- |------------------
+| network_name  | VPC network name
+| subnet_name   | VPC subnetwork name
 
 ## Running
 
