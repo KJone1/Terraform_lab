@@ -6,6 +6,7 @@ output "name" {
   value       = try(google_compute_disk.data-storage[0].name, "")
 }
 output "self_link" {
+  description = "self_link is a URL that points to the instance's metadata and configuration"
   value       = try(google_compute_disk.data-storage[0].self_link, "")
 }
 output "deployed_zone" {
