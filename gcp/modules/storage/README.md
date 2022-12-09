@@ -34,7 +34,7 @@ To call this module, include in your tf configuration:
 
 module "disk" {
   source       = "../modules/storage"
-  name         = "demo-disk
+  name         = "demo-disk"
   sizeGB       = 20
 }
 
