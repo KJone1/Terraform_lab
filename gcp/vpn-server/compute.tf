@@ -4,7 +4,7 @@ module "vm" {
   name           = "wireguard"
   network_name   = module.network.network_name
   subnet_name    = module.network.subnet_name
-  machine_type   = "e2-medium"
+  machine_type   = var.machine_type
   labels = {
     "environment" = "prod",
     "role"        = "vpn-server"

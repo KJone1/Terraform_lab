@@ -19,3 +19,10 @@ variable "zone" {
   sensitive   = false
   default     = "c" 
 }
+variable "machine_type" {
+  description = "machine type"
+  type        = string
+  nullable    = false
+  sensitive   = false
+  default     = "e2-medium"
+}
