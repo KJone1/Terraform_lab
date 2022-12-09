@@ -11,7 +11,6 @@ variable "sizeGB" {
   type        = number
   nullable    = false
   sensitive   = false
-  default     = 20
 }
 # --- Optional ---
 variable "deployment_count" {
