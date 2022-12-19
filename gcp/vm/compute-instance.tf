@@ -6,6 +6,7 @@ locals {
     "app"         = "playground"
     "region"      = var.region
   }
+  tags   = ["http","https","ssh","ping"]
 }
 
 module "network" {
@@ -20,6 +21,7 @@ module "disk" {
   zone           = "${var.region}-${var.zone}"
   sizeGB         = 20
 }
+
 module "vm" {
   source         = "../modules/vm"
   count          = var.deployment_count
@@ -30,7 +32,7 @@ module "vm" {
   network_name   = module.network.network_name
   subnet_name    = module.network.subnet_name
   labels         = local.labels
-  tags           = ["http","https","ssh","ping"]
+  tags           = local.tags
   attached_disk_source = module.disk[count.index].self_link
   attached_disk_name = "extnd"
 }
