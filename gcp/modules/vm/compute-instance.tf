@@ -3,7 +3,7 @@
 
 resource "google_compute_instance" "default" {
   count          = var.deployment_count
-  name           = "${var.name}"
+  name           = var.name
   description    = "vm instance deployment"
   machine_type   = var.machine_type
   zone           = "${var.region}-${var.zone}"
