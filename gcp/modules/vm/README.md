@@ -9,6 +9,7 @@
 |  name |  instance name  |  string  |  n/a | yes  |
 | network_name | VPC network name | string | n/a | yes |
 | subnet_name | VPC subnetwork name | string | n/a | yes |
+|image | startup image | string | n/a | yes
 | deployment_count | number of instances to deploy | number | 1 | no |
 | region | region to deploy to | string | "europe-central2" | no |
 | zone | zone to deploy to | string | "c" | no |

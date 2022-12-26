@@ -4,7 +4,10 @@ module "vm" {
   name           = "wireguard"
   network_name   = module.network.network_name
   subnet_name    = module.network.subnet_name
+  image          = data.google_compute_image.rocky8-latest.id
   machine_type   = var.machine_type
+  region         = var.region
+  zone           = var.zone
   labels = {
     "environment" = "prod",
     "role"        = "vpn-server"

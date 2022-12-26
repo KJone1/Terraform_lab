@@ -18,7 +18,7 @@ resource "google_compute_instance" "default" {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
     device_name = "main"
     initialize_params { 
-      image = data.google_compute_image.rocky8-latest.id
+      image = var.image
       size  = 20            # in GB
       type  = "pd-balanced"
     }

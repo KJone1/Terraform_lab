@@ -18,6 +18,12 @@ variable "subnet_name" {
   nullable    = false
   sensitive   = false
 }
+variable "image" {
+  description = "startup image"
+  type        = string
+  nullable    = false
+  sensitive   = false
+}
 # --- Optional ---
 variable "deployment_count" {
   description = "number of instances to deploy"

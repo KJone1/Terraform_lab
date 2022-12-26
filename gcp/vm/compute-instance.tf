@@ -27,6 +27,7 @@ module "vm" {
   count          = var.deployment_count
   name           = "${var.name}-${count.index + 1}"
   machine_type   = var.machine_type
+  image          = data.google_compute_image.rocky8-latest.id
   region         = var.region
   zone           = var.zone
   network_name   = module.network.network_name
