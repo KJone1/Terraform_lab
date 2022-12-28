@@ -23,17 +23,18 @@ module "disk" {
 }
 
 module "vm" {
-  source         = "../modules/vm"
-  count          = var.deployment_count
-  name           = "${var.name}-${count.index + 1}"
-  machine_type   = var.machine_type
-  image          = data.google_compute_image.rocky8-latest.id
-  region         = var.region
-  zone           = var.zone
-  network_name   = module.network.network_name
-  subnet_name    = module.network.subnet_name
-  labels         = local.labels
-  tags           = local.tags
+  source               = "../modules/vm"
+  count                = var.deployment_count
+  name                 = "${var.name}-${count.index + 1}"
+  machine_type         = var.machine_type
+  image                = data.google_compute_image.rocky8-latest.id
+  region               = var.region
+  zone                 = var.zone
+  network_name         = module.network.network_name
+  subnet_name          = module.network.subnet_name
+  labels               = local.labels
+  tags                 = local.tags
+  attach_disk          = true
   attached_disk_source = module.disk[count.index].self_link
-  attached_disk_name = "extnd"
+  attached_disk_name   = module.disk[count.index].name
 }

@@ -1,6 +1,13 @@
 
 # compute => https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance
 
+resource "google_compute_attached_disk" "default" {
+  count       = var.attach_disk ? var.deployment_count : 0
+  disk        = var.attached_disk_source
+  instance    = google_compute_instance.default[count.index].id
+  device_name = var.attached_disk_name
+}
+
 resource "google_compute_instance" "default" {
   count          = var.deployment_count
   name           = var.name
@@ -23,15 +30,14 @@ resource "google_compute_instance" "default" {
       type  = "pd-balanced"
     }
   }
-  attached_disk {
-    source        = var.attached_disk_source
-    device_name   = var.attached_disk_name
-  }
   network_interface {
     network    = var.network_name
     subnetwork = var.subnet_name
     access_config {
       network_tier = "PREMIUM" 
     } 
+  }
+  lifecycle {
+    ignore_changes = [attached_disk]
   }
 }
