@@ -58,11 +58,7 @@ variable "labels" {
   type        = map
   nullable    = false
   sensitive   = false
-  default     = {
-    "environment" = "dev"
-    "role"        = "dev-server"
-    "app"         = "playground"
-  }
+  default     = {}
 }
 variable "tags" {
   description = "instance network tags"
