@@ -41,7 +41,8 @@ module "vm" {
   source       = "../modules/vm"
   name         = "demo-machine"
   network_name = "my-vpc-network-name" 
-  subnet_name  = "my-vpc-subnet-name" 
+  subnet_name  = "my-vpc-subnet-name"
+  image        = data.image 
 }
 
 ```
