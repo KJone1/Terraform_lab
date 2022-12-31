@@ -7,7 +7,7 @@ resource "google_storage_bucket" "default" {
   force_destroy               = false
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
-  labels                      = {
+  labels = {
     "environment" = "prod",
     "role"        = "web-server-bucket"
     "app-name"    = "playground"

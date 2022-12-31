@@ -7,7 +7,7 @@ resource "aws_ebs_volume" "default" {
   count             = var.deployment_count
   availability_zone = "${var.region}${var.az}"
   size              = 30
-  tags              = {
+  tags = {
     Name        = "ebs-${aws_instance.default[count.index].tags.Name}",
     environment = "dev",
     role        = "test-server",
@@ -32,16 +32,16 @@ resource "aws_instance" "default" {
   vpc_security_group_ids = [
     aws_security_group.wg_vpn.id
   ]
-  tags          = {
+  tags = {
     Name        = "srv-${count.index + 1}",
     environment = "dev",
     role        = "test-server",
   }
-  root_block_device  {
+  root_block_device {
     volume_size = 20
     volume_type = "gp2"
-    tags        = {
-      Name      = "srv-${count.index + 1}-storage",
-  } 
+    tags = {
+      Name = "srv-${count.index + 1}-storage",
+    }
   }
 }

@@ -9,14 +9,14 @@ variable "region" {
   description = "Region to deploy to"
   type        = string
   nullable    = false
-  default     = "us-east-1" 
-} 
+  default     = "us-east-1"
+}
 variable "az" {
   description = "Availability zones to deploy to"
   type        = string
   nullable    = false
-  default     = "d" 
-} 
+  default     = "d"
+}
 variable "pub_key_name" {
   description = "aws key pair name"
   type        = string

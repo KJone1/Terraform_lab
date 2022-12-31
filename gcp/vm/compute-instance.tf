@@ -6,20 +6,20 @@ locals {
     "app"         = "playground"
     "region"      = var.region
   }
-  tags   = ["http","https","ssh","ping"]
+  tags = ["http", "https", "ssh", "ping"]
 }
 
 module "network" {
   source       = "../modules/network"
-  network_name = "my-main-vpc-network" 
+  network_name = "my-main-vpc-network"
 }
 
 module "disk" {
-  source         = "../modules/storage"
-  count          = var.deployment_count
-  name           = "${var.name}-${count.index + 1}-ext"
-  zone           = "${var.region}-${var.zone}"
-  sizeGB         = 20
+  source = "../modules/storage"
+  count  = var.deployment_count
+  name   = "${var.name}-${count.index + 1}-ext"
+  zone   = "${var.region}-${var.zone}"
+  sizeGB = 20
 }
 
 module "vm" {

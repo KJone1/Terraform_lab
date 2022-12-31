@@ -2,7 +2,7 @@
 module "network" {
   source            = "../modules/network"
   network_name      = "my-main-vpc-network"
-  availability_zone = "${var.region}${var.az}" 
+  availability_zone = "${var.region}${var.az}"
 }
 
 resource "aws_security_group" "wg_vpn" {
@@ -10,20 +10,20 @@ resource "aws_security_group" "wg_vpn" {
   description = "WireGuard VPN firewall rules"
   vpc_id      = module.network.vpc_id
 
-  
+
   ingress {
-    description      = "Allow ssh"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    description = "Allow ssh"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    description      = "Allow wg"
-    from_port        = 51820
-    to_port          = 51820
-    protocol         = "udp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    description = "Allow wg"
+    from_port   = 51820
+    to_port     = 51820
+    protocol    = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {

@@ -37,14 +37,14 @@ variable "region" {
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "europe-central2" 
-} 
+  default     = "europe-central2"
+}
 variable "zone" {
   description = "zone to deploy -> 'a','b','c'"
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "c" 
+  default     = "c"
 }
 variable "machine_type" {
   description = "instance type"
@@ -55,17 +55,17 @@ variable "machine_type" {
 }
 variable "labels" {
   description = "instance labels"
-  type        = map
+  type        = map(any)
   nullable    = false
   sensitive   = false
   default     = {}
 }
 variable "tags" {
   description = "instance network tags"
-  type        = list
+  type        = list(any)
   nullable    = false
   sensitive   = false
-  default     = ["http","https","ssh","ping"]
+  default     = ["http", "https", "ssh", "ping"]
 }
 variable "startup_script" {
   description = "instance startup script"

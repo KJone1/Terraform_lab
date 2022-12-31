@@ -6,7 +6,7 @@
 # rt_association   => https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
 
 resource "aws_vpc" "vpc_network" {
-  cidr_block = "160.24.0.0/16"
+  cidr_block       = "160.24.0.0/16"
   instance_tenancy = "default"
   tags = {
     Name = var.network_name

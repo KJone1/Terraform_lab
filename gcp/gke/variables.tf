@@ -10,12 +10,12 @@ variable "region" {
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "europe-central2" 
-} 
+  default     = "europe-central2"
+}
 variable "zone" {
   description = "zone to deploy -> 'a','b','c'"
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "a" 
+  default     = "a"
 }

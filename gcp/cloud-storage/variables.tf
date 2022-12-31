@@ -1,10 +1,10 @@
 
 variable "project" {
   description = "project id"
-  type        = map
+  type        = map(any)
   nullable    = false
   sensitive   = false
-  default     = {
+  default = {
     test-project = "onyx-philosophy-333713"
   }
 }
@@ -13,12 +13,12 @@ variable "region" {
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "europe-central2" 
+  default     = "europe-central2"
 }
 variable "zone" {
   description = "zone to deploy -> 'a','b','c'"
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "c" 
+  default     = "c"
 }

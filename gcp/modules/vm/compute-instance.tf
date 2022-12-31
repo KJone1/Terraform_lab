@@ -17,16 +17,16 @@ resource "google_compute_instance" "default" {
   desired_status = "RUNNING"
   labels         = var.labels
   tags           = var.tags
-  metadata       = {
+  metadata = {
     enable-oslogin = "TRUE"
   }
   metadata_startup_script = var.startup_script
   boot_disk {
     # ↓ On the instance, this device will be /dev/disk/by-id/google-{{device_name}}
     device_name = "main"
-    initialize_params { 
+    initialize_params {
       image = var.image
-      size  = 20            # in GB
+      size  = 20 # in GB
       type  = "pd-balanced"
     }
   }
@@ -34,8 +34,8 @@ resource "google_compute_instance" "default" {
     network    = var.network_name
     subnetwork = var.subnet_name
     access_config {
-      network_tier = "PREMIUM" 
-    } 
+      network_tier = "PREMIUM"
+    }
   }
   lifecycle {
     ignore_changes = [attached_disk]

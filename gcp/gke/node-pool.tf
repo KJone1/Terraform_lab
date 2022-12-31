@@ -7,24 +7,24 @@ resource "google_container_node_pool" "primary_node_pool" {
   cluster    = google_container_cluster.khan.name
   node_count = 3
   version    = data.google_container_engine_versions.gke-ver.default_cluster_version
-       
+
   node_config {
     preemptible  = true
     machine_type = "e2-medium"
     disk_size_gb = 20
     disk_type    = "pd-standard"
-    labels       = {
-    "role"       = "cluster-node"
-    "cluster"    = google_container_cluster.khan.name
-    } 
-    tags         = [
+    labels = {
+      "role"    = "cluster-node"
+      "cluster" = google_container_cluster.khan.name
+    }
+    tags = [
       "http",
       "https",
       "ssh",
       "ping",
-    ]  
+    ]
     service_account = data.google_service_account.Test_Proj_TfTest.email
-    oauth_scopes    = [
+    oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }

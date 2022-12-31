@@ -1,7 +1,7 @@
 
 module "network" {
   source       = "../modules/network"
-  network_name = "wireguard-network" 
+  network_name = "wireguard-network"
 }
 
 resource "google_compute_firewall" "wg-vpn-rule" {
@@ -11,14 +11,14 @@ resource "google_compute_firewall" "wg-vpn-rule" {
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["vpn"]
   allow {
-    protocol  = "udp"
-    ports     = ["51820"]
-}
+    protocol = "udp"
+    ports    = ["51820"]
+  }
   allow {
-    protocol  = "udp"
-    ports     = ["53"]
-}
-log_config {
+    protocol = "udp"
+    ports    = ["53"]
+  }
+  log_config {
     metadata = "INCLUDE_ALL_METADATA"
   }
 }

@@ -32,7 +32,7 @@ variable "zone" {
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "c" 
+  default     = "c"
 }
 variable "type" {
   description = "disk type"
@@ -43,10 +43,10 @@ variable "type" {
 }
 variable "labels" {
   description = "disk labels"
-  type        = map
+  type        = map(any)
   nullable    = false
   sensitive   = false
-  default     = {
+  default = {
     "environment" = "dev"
     "role"        = "server-storage"
     "app"         = "playground"

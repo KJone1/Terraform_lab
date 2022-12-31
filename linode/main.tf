@@ -6,12 +6,12 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "tfstate"
-    key    = "network/terraform.tfstate"           # file path inside bucket
-    region = "eu-central-1"                        # e.g. us-east-1
-    endpoint = "eu-central-1.linodeobjects.com"    # e.g. us-est-1.linodeobjects.com
-    access_key = "BVH1JK7NQXK1TS55F53C"            # demo keys
-    secret_key = "QRu5NKBrBcJofPDFh9lH1KPIhzUhJzL5Qo6XvDRA"
+    bucket                      = "tfstate"
+    key                         = "network/terraform.tfstate"      # file path inside bucket
+    region                      = "eu-central-1"                   # e.g. us-east-1
+    endpoint                    = "eu-central-1.linodeobjects.com" # e.g. us-est-1.linodeobjects.com
+    access_key                  = "BVH1JK7NQXK1TS55F53C"           # demo keys
+    secret_key                  = "QRu5NKBrBcJofPDFh9lH1KPIhzUhJzL5Qo6XvDRA"
     skip_credentials_validation = true
     # According to Terraform's documentation: (Optional) Skip the credentials validation 
     # via the STS API. Presumably this is referring to Amazon STS, but I'll be honest; 
