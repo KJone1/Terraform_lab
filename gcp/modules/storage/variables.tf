@@ -12,6 +12,12 @@ variable "sizeGB" {
   nullable    = false
   sensitive   = false
 }
+variable "attach_to" {
+  description = "id of instance to attach disk"
+  type        = string
+  nullable    = false
+  sensitive   = false
+}
 # --- Optional ---
 variable "deployment_count" {
   description = "number of disks to deploy"

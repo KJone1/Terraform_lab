@@ -74,24 +74,4 @@ variable "startup_script" {
   sensitive   = false
   default     = ""
 }
-variable "attach_disk" {
-  description = "attache additional disk"
-  type        = bool
-  nullable    = false
-  sensitive   = false
-  default     = false
-}
-variable "attached_disk_source" {
-  description = "attached disk self link"
-  type        = string
-  nullable    = false
-  sensitive   = false
-  default     = ""
-}
-variable "attached_disk_name" {
-  description = "attached disk name"
-  type        = string
-  nullable    = false
-  sensitive   = false
-  default     = ""
-}
+

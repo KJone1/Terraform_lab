@@ -8,6 +8,7 @@
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 |  name |  disk name  |  string  |  n/a | yes  |
 | sizeGB | disk size in GB | int | n/a | yes |
+| attach_to | id of instance to attach to | string | n/a | yes |
 | deployment_count | number of disks to deploy | int | 1 | no |
 | block_sizeBYTES | disk block size in bytes | int | 4096 | no |
 | zone | zone to deploy to | string | "c" | no |

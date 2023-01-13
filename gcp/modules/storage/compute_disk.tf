@@ -11,3 +11,10 @@ resource "google_compute_disk" "storage" {
   zone                      = var.zone
   labels                    = var.labels
 }
+
+resource "google_compute_attached_disk" "default" {
+  count       = var.deployment_count
+  disk        = google_compute_disk.storage[count.index].self_link
+  instance    = var.attach_to
+  device_name = var.name
+}

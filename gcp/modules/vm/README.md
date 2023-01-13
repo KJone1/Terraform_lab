@@ -17,9 +17,6 @@
 | labels | instance labels | map | {} | no |
 | tags | instance tags | list | ["http",<br> "https",<br> "ssh",<br> "ping"] | no |
 |startup_script | startup script | string | n/a | no
-|attach_disk | attache additional  disk| bool | false | no
-|attached_disk_source | attached disk source | string | n/a | no
-|attached_disk_name | attached disk name | string | n/a | no
 
 ## Outputs
 
