@@ -3,7 +3,7 @@
 # https://github.com/tasdikrahman/terraform-gcp-examples/blob/master/single-and-multi-node-compute-vm/firewall.tf
 
 resource "google_compute_firewall" "http-rule" {
-  name          = "vpc-allow-http"
+  name          = "${var.network_name}-vpc-allow-http"
   network       = google_compute_network.vpc_network.name
   description   = "Firewall rule targeting tagged http web servers"
   source_ranges = ["0.0.0.0/0"]
@@ -17,7 +17,7 @@ resource "google_compute_firewall" "http-rule" {
   }
 }
 resource "google_compute_firewall" "https-rule" {
-  name          = "vpc-allow-https"
+  name          = "${var.network_name}-vpc-allow-https"
   network       = google_compute_network.vpc_network.name
   description   = "Firewall rule targeting tagged https web servers"
   source_ranges = ["0.0.0.0/0"]
@@ -31,7 +31,7 @@ resource "google_compute_firewall" "https-rule" {
   }
 }
 resource "google_compute_firewall" "health-check-rule" {
-  name          = "vpc-allow-health-check"
+  name          = "${var.network_name}-vpc-allow-health-check"
   network       = google_compute_network.vpc_network.name
   description   = "Firewall rule allowing health checks from gcp L7 LB"
   source_ranges = ["35.191.0.0/16", "130.211.0.0/22"]
@@ -44,7 +44,7 @@ resource "google_compute_firewall" "health-check-rule" {
   }
 }
 resource "google_compute_firewall" "ssh-rule" {
-  name          = "vpc-allow-ssh"
+  name          = "${var.network_name}-vpc-allow-ssh"
   network       = google_compute_network.vpc_network.name
   description   = "Firewall rule for ssh connection"
   source_ranges = ["0.0.0.0/0"]
@@ -58,7 +58,7 @@ resource "google_compute_firewall" "ssh-rule" {
   }
 }
 resource "google_compute_firewall" "ping-rule" {
-  name          = "vpc-allow-icmp"
+  name          = "${var.network_name}-vpc-allow-icmp"
   network       = google_compute_network.vpc_network.name
   description   = "Firewall rule for ping"
   source_ranges = ["0.0.0.0/0"]
@@ -68,7 +68,7 @@ resource "google_compute_firewall" "ping-rule" {
   }
 }
 resource "google_compute_firewall" "internal-rule" {
-  name          = "vpc-allow-internal"
+  name          = "${var.network_name}-vpc-allow-internal"
   network       = google_compute_network.vpc_network.name
   description   = "Firewall rule for internal communication"
   source_ranges = ["10.128.0.0/9"]
