@@ -46,7 +46,7 @@ Deploy Google Compute Engine instance in GCP, with an attached disk, firewall ru
 
 | Name | Description |
 |------|-------------|
-| <a name="output_disk_metadata"></a> [disk\_metadata](#output\_disk\_metadata) | Metadata of deployed gcp compute instance |
+| <a name="output_disk_metadata"></a> [disk\_metadata](#output\_disk\_metadata) | Metadata of deployed gcp compute disk |
 | <a name="output_instance_metadata"></a> [instance\_metadata](#output\_instance\_metadata) | Metadata of deployed gcp compute instance |
 
 ## Running
