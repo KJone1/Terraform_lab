@@ -1,0 +1,55 @@
+formatter: "md"
+
+version: ">= 0.13.0, < 1.0.0"
+
+sections:
+  hide:
+    - providers
+
+output:
+  file: "README.md"
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    # Network Configuration
+
+    Module to deploy VPC network and firewall rules in GCP.
+
+    {{ .Content }}
+
+    ## Running
+
+    To call this module, include in your tf configuration:
+
+    ```terraform
+
+    module "network" {
+      source       = "../modules/network"
+      network_name = "my-vpc-network-name" 
+    }
+
+    ```
+
+    ---
+    \- maintained by: KJone1
+
+    <!-- END_TF_DOCS -->
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: true
+  html: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true

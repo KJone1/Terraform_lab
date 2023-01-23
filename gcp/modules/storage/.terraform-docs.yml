@@ -1,0 +1,57 @@
+formatter: "md"
+
+version: ">= 0.13.0, < 1.0.0"
+
+sections:
+  hide:
+    - providers
+
+output:
+  file: "README.md"
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    # GCP disk configuration
+
+    Module to Deploy Google Compute Engine disk.
+
+    {{ .Content }}
+
+    ## Running
+
+    To call this module, include in your tf configuration:
+
+    ```terraform
+
+    module "disk" {
+      source       = "../modules/storage"
+      name         = "demo-disk"
+      sizeGB       = 20
+      attach_to    = google_compute_instance.default
+    }
+
+    ```
+
+    ---
+    \- maintained by: KJone1
+
+    <!-- END_TF_DOCS -->
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: true
+  html: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
