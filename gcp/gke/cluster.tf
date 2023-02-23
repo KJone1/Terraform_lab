@@ -6,7 +6,7 @@ module "network" {
   network_name = "my-main-vpc-network"
 }
 
-resource "google_container_cluster" "khan" {
+resource "google_container_cluster" "prime" {
   name     = var.cluster_name
   location = "${var.region}-${var.zone}"
   # ↑ If you specify a zone the cluster will be a zonal cluster, 

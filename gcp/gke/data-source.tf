@@ -1,5 +1,5 @@
 
-data "google_service_account" "Test_Proj_TfTest" {
+data "google_service_account" "default_sa" {
   account_id = "TfTest"
   project    = var.project
 }
