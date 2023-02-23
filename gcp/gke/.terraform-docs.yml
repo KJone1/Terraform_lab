@@ -1,0 +1,48 @@
+formatter: "md"
+
+version: ">= 0.13.0, < 1.0.0"
+
+output:
+  file: "README.md"
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    # GKE configuration
+
+    Deploy GKE cluster in GCP.
+
+    {{ .Content }}
+
+    ## Running
+
+    To provision this example, run the following from within this directory:
+
+    - `terraform init` to get plugins
+    - `terraform plan` to dry-run the infrastructure changes
+    - `terraform apply` to apply the infrastructure changes
+    - `terraform destroy` to tear down the created infrastructure
+    - `gcloud container clusters get-credentials {cluster name} --zone {cluster zone}` to update a kubeconfig file with appropriate credentials and endpoint information to point kubectl at a specific cluster in GKE.
+
+    ---
+    \- maintained by: KJone1
+
+    <!-- END_TF_DOCS -->
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: true
+  html: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
