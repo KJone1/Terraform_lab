@@ -24,7 +24,7 @@ output:
     - `gcloud container clusters get-credentials {cluster name} --zone {cluster zone}` to update a kubeconfig file with appropriate credentials and endpoint information to point kubectl at a specific cluster in GKE.
 
     ---
-    \- maintained by: KJone1
+    \- maintained by: [KJone1](https://github.com/KJone1)
 
     <!-- END_TF_DOCS -->
 
