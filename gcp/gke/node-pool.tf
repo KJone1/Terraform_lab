@@ -4,7 +4,7 @@
 resource "google_container_node_pool" "primary_node_pool" {
   name       = var.cluster_node_name
   location   = "${var.region}-${var.zone}"
-  cluster    = google_container_cluster.khan.name
+  cluster    = google_container_cluster.prime.name
   node_count = var.cluster_node_count
   version    = data.google_container_engine_versions.gke-ver.default_cluster_version
 
@@ -15,7 +15,7 @@ resource "google_container_node_pool" "primary_node_pool" {
     disk_type    = "pd-standard"
     labels = {
       "role"    = "cluster-node"
-      "cluster" = google_container_cluster.khan.name
+      "cluster" = google_container_cluster.prime.name
     }
     tags = [
       "http",
@@ -23,7 +23,7 @@ resource "google_container_node_pool" "primary_node_pool" {
       "ssh",
       "ping",
     ]
-    service_account = data.google_service_account.Test_Proj_TfTest.email
+    service_account = data.google_service_account.default_sa.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]

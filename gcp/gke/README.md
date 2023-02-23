@@ -36,9 +36,9 @@ Deploy GKE cluster in GCP.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_project"></a> [project](#input\_project) | project id | `string` | n/a | yes |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | GKE cluster name | `string` | `"Prime"` | no |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | GKE cluster name | `string` | `"prime"` | no |
 | <a name="input_cluster_node_count"></a> [cluster\_node\_count](#input\_cluster\_node\_count) | GKE cluster node count | `number` | `3` | no |
-| <a name="input_cluster_node_name"></a> [cluster\_node\_name](#input\_cluster\_node\_name) | GKE cluster node name | `string` | `"EX"` | no |
+| <a name="input_cluster_node_name"></a> [cluster\_node\_name](#input\_cluster\_node\_name) | GKE cluster node name | `string` | `"ex"` | no |
 | <a name="input_cluster_node_type"></a> [cluster\_node\_type](#input\_cluster\_node\_type) | GKE cluster node machine type | `string` | `"e2-medium"` | no |
 | <a name="input_region"></a> [region](#input\_region) | region to deploy | `string` | `"europe-central2"` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | zone to deploy -> 'a','b','c' | `string` | `"a"` | no |

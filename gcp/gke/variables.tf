@@ -24,14 +24,14 @@ variable "cluster_name" {
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "Prime"
+  default     = "prime"
 }
 variable "cluster_node_name" {
   description = "GKE cluster node name"
   type        = string
   nullable    = false
   sensitive   = false
-  default     = "EX"
+  default     = "ex"
 }
 variable "cluster_node_count" {
   description = "GKE cluster node count"
