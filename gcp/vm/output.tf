@@ -7,11 +7,11 @@ output "instance_metadata" {
 
   }
 }
-output "disk_metadata" {
-  description = "Metadata of deployed gcp compute disk"
-  value = {
-    for disk in module.disk[*] :
-    disk.name => disk
+# output "disk_metadata" {
+#   description = "Metadata of deployed gcp compute disk"
+#   value = {
+#     for disk in module.disk[*] :
+#     disk.name => disk
 
-  }
-}
+#   }
+# }

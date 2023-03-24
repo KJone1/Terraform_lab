@@ -14,15 +14,6 @@ module "network" {
   network_name = "my-main-vpc-network"
 }
 
-module "disk" {
-  source    = "../modules/storage"
-  count     = var.deployment_count
-  name      = "${var.name}-${count.index + 1}-ext"
-  zone      = "${var.region}-${var.zone}"
-  sizeGB    = 20
-  attach_to = module.vm[count.index].id
-}
-
 module "vm" {
   source       = "../modules/vm"
   count        = var.deployment_count
