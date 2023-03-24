@@ -9,11 +9,6 @@ locals {
   tags = ["http", "https", "ssh", "ping"]
 }
 
-module "network" {
-  source       = "../modules/network"
-  network_name = "my-main-vpc-network"
-}
-
 module "vm" {
   source       = "../modules/vm"
   count        = var.deployment_count
