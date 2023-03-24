@@ -19,7 +19,7 @@ resource "google_compute_instance" "default" {
     device_name = "main"
     initialize_params {
       image = var.image
-      size  = 20 # in GB
+      size  = 40 # in GB
       type  = "pd-balanced"
     }
   }
