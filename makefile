@@ -1,4 +1,4 @@
-.PHONY: help init plan apply destroy lint format
+.PHONY: help lint format docs
 
 DEFAULT: help
 
@@ -12,6 +12,7 @@ lint: ## Lint the configuration using terraform validate
 
 format: ## Format the configuration using terraform fmt
 	@terraform fmt $(p)
+
 
 docs: ## Generate documentation
 	@terraform-docs $(p)/.terraform-docs.yml
