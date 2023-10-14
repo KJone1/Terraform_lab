@@ -7,7 +7,7 @@ Module to Deploy Google Compute Engine disk.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) |  ~> 1.1.4 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) |  >= 1.1.4 |
 | <a name="requirement_google"></a> [google](#requirement\_google) |  >= 4.11.0 |
 
 ## Resources
@@ -58,6 +58,6 @@ module "disk" {
 ```
 
 ---
-\- maintained by: KJone1
+\- maintained by: [KJone1](https://github.com/KJone1)
 
 <!-- END_TF_DOCS -->
