@@ -11,7 +11,6 @@ output:
 
     Deploy WireGuard VPN server in GCP, with firewall rules and network configuration.
 
-
     {{ .Content }}
 
     ## Running
@@ -33,13 +32,13 @@ sort:
   by: required
 
 settings:
-  anchor: true
+  anchor: false
   color: true
   default: true
   description: false
   escape: true
   hide-empty: true
-  html: true
+  html: false
   indent: 2
   lockfile: true
   read-comments: true
