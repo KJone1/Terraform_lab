@@ -2,20 +2,22 @@
 
 DEFAULT: help
 
-# Path
-p ?= .
-
-
 lint: ## Lint the configuration using terraform validate
-	@terraform validate $(p)
+	@echo ""
+	@echo "Linting with terraform validate..."
+	@terraform validate .
+	@echo ""
+	@echo "Linting with tflint..."
+	@tflint --enable-plugin=terraform --color
+	@echo ""
 
 
 format: ## Format the configuration using terraform fmt
-	@terraform fmt $(p)
+	@terraform fmt .
 
 
 docs: ## Generate documentation
-	@terraform-docs $(p)/.terraform-docs.yml
+	@terraform-docs markdown . -c .terraform-docs.yml
 
 
 help: ## Display this help message
