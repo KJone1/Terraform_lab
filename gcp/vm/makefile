@@ -13,7 +13,7 @@ lint: ## Lint the configuration using terraform validate
 
 
 format: ## Format the configuration using terraform fmt
-	@terraform fmt .
+	@terraform fmt -diff -recursive .
 
 
 docs: ## Generate documentation
