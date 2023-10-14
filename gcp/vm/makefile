@@ -17,7 +17,7 @@ format: ## Format the configuration using terraform fmt
 
 
 docs: ## Generate documentation
-	@terraform-docs markdown . -c .terraform-docs.yml
+	@terraform-docs -c .terraform-docs.yml .
 
 
 help: ## Display this help message
