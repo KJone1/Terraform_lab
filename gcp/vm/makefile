@@ -4,9 +4,9 @@ DEFAULT: help
 
 lint: ## Lint configuration using terraform validate and tflint
 	@echo ""
-	@echo "Linting with terraform validate..."
+	@echo " >> Linting with terraform validate..."
 	@terraform validate .
-	@echo "Linting with tflint..."
+	@echo " >> Linting with tflint..."
 	@tflint --enable-plugin=terraform --color
 	@echo ""
 
